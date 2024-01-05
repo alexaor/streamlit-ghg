@@ -19,6 +19,7 @@ SCOPE_2_PDF = os.path.join(DATA_PATH, "scope2.pdf")
 SCOPE_3_PDF = os.path.join(DATA_PATH, "scope3.pdf")
 
 load_dotenv()
+PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
 
 
 def init_db():
@@ -44,7 +45,7 @@ def init_db():
     pinecone_index = pinecone.Index("ghg-protocol")
     vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
-    index = VectorStoreIndex.from_documents(
+    VectorStoreIndex.from_documents(
         documents,
         storage_context=storage_context,
         show_progress=True,
