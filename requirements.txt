@@ -1,6 +1,0 @@
-streamlit
-replicate
-pinecone-client
-transformers
-torch
-llama-index
