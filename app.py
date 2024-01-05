@@ -48,6 +48,7 @@ if prompt:
     st.write("Thinking...")
     response = query_engine.query(prompt)
     st.write(response.response)
+    # Consider spitting out context as well
 
 
 
